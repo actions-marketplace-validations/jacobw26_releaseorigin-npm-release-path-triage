@@ -4,6 +4,12 @@ All notable changes to the ReleaseOrigin npm Release Path Triage Action are
 recorded here. The project follows semantic versioning from version 1.0.0
 onward.
 
+## 1.0.1
+
+- Quoted the classification output description so `action.yml` is valid YAML
+  and GitHub can recognize the repository as a Marketplace Action.
+- Added a metadata regression test for ambiguous unquoted colon scalars.
+
 ## 1.0.0
 
 - Added dependency-free Node 24 classification of one public npm package as

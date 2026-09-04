@@ -17,7 +17,7 @@ It never:
 
 ## Usage
 
-The example pins the reviewed v1.0.0 release commit:
+The example pins the reviewed v1.0.1 metadata-fix commit:
 
 ```yaml
 name: Inspect public npm release path
@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Classify the visible release path
         id: releaseorigin
-        uses: jacobw26/releaseorigin-npm-release-path-triage@4dc9f76ea13b0865ed38b258ae42525a07a96134
+        uses: jacobw26/releaseorigin-npm-release-path-triage@c98d805c9595df14b20b698083209640b1f41261
         with:
           package: '@scope/package-name'
 
@@ -98,7 +98,7 @@ npm run build:check
 
 `dist/index.js` is committed because GitHub executes the packaged file. `npm run build:check` fails if it differs from `src/index.js`.
 
-Local verification receipt (September 4, 2026): `npm test` passed 13/13 tests, including the source/bundle parity check. This dated local result does not attest to a later GitHub-hosted run, Marketplace review, or consumer workflow.
+Local verification receipt (September 4, 2026): `npm test` passed 14/14 tests, including the metadata-scalar and source/bundle parity checks. This dated local result does not attest to a later GitHub-hosted run, Marketplace review, or consumer workflow.
 
 ## Optional human next step
 
