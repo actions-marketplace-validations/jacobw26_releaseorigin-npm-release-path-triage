@@ -9,7 +9,7 @@ inputs:
 
 outputs:
   classification:
-    description: Bounded public-workflow classification: TOKEN, OIDC, STAGED, or UNKNOWN.
+    description: "Bounded public-workflow classification: TOKEN, OIDC, STAGED, or UNKNOWN."
   reason:
     description: Machine-readable reason for the classification.
   package-version:

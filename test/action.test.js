@@ -16,6 +16,17 @@ const json = (value, init = {}) => new Response(JSON.stringify(value), {
 });
 const workflowResponse = (text) => json({ type: "file", encoding: "base64", size: Buffer.byteLength(text), content: Buffer.from(text).toString("base64") });
 
+test("action metadata avoids ambiguous unquoted colon scalars", () => {
+  const metadata = fs.readFileSync(path.join(__dirname, "..", "action.yml"), "utf8");
+  for (const [index, line] of metadata.split(/\r?\n/).entries()) {
+    const match = line.match(/^\s*[A-Za-z0-9_-]+:\s+(.+)$/);
+    if (!match) continue;
+    const value = match[1].trim();
+    if (/^["'|>]/.test(value)) continue;
+    assert.doesNotMatch(value, /:\s/, `action.yml:${index + 1} must quote a scalar containing a colon`);
+  }
+});
+
 function githubFetch(workflow, seen = []) {
   return async (url, options) => {
     seen.push({ url, options });

@@ -1,6 +1,6 @@
 {
   "name": "releaseorigin-npm-release-path-triage-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Dependency-free GitHub Action for bounded public npm release-path triage.",
   "license": "MIT",
