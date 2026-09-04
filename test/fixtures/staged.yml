@@ -1,0 +1,3 @@
+publish:
+  script:
+    - npm stage publish

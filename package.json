@@ -1,0 +1,16 @@
+{
+  "name": "releaseorigin-npm-release-path-triage-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free GitHub Action for bounded public npm release-path triage.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:check": "node scripts/build.mjs --check",
+    "test": "npm run build:check && node --test test/*.test.js",
+    "check": "npm test"
+  }
+}

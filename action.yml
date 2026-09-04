@@ -1,0 +1,30 @@
+name: ReleaseOrigin npm Release Path Triage
+description: Classify a public npm package release path as TOKEN, OIDC, STAGED, or UNKNOWN without installing it.
+author: ReleaseOrigin
+
+inputs:
+  package:
+    description: Exact lowercase npm package name, for example package-name or @scope/package-name.
+    required: true
+
+outputs:
+  classification:
+    description: Bounded public-workflow classification: TOKEN, OIDC, STAGED, or UNKNOWN.
+  reason:
+    description: Machine-readable reason for the classification.
+  package-version:
+    description: Latest public npm version observed during the check.
+  repository-provider:
+    description: github, gitlab, or none.
+  workflow-files-inspected:
+    description: JSON array of public workflow file names inspected.
+  evidence-summary:
+    description: The same minimized Markdown evidence summary written to the job summary.
+
+runs:
+  using: node24
+  main: dist/index.js
+
+branding:
+  icon: shield
+  color: blue
