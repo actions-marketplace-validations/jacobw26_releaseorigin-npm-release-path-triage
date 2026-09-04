@@ -17,7 +17,7 @@ It never:
 
 ## Usage
 
-The example pins the reviewed initial public commit:
+The example pins the reviewed v1.0.0 release commit:
 
 ```yaml
 name: Inspect public npm release path
@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Classify the visible release path
         id: releaseorigin
-        uses: jacobw26/releaseorigin-npm-release-path-triage@a76bebb54e0dd3d15f12d99a96b9c6e12eea647d
+        uses: jacobw26/releaseorigin-npm-release-path-triage@4dc9f76ea13b0865ed38b258ae42525a07a96134
         with:
           package: '@scope/package-name'
 
