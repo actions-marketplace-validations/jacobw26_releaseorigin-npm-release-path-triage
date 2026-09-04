@@ -17,7 +17,7 @@ It never:
 
 ## Usage
 
-The bootstrap example uses the repository's `main` branch so it is valid for the initial public commit:
+The example pins the reviewed initial public commit:
 
 ```yaml
 name: Inspect public npm release path
@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Classify the visible release path
         id: releaseorigin
-        uses: jacobw26/releaseorigin-npm-release-path-triage@main
+        uses: jacobw26/releaseorigin-npm-release-path-triage@a76bebb54e0dd3d15f12d99a96b9c6e12eea647d
         with:
           package: '@scope/package-name'
 
@@ -45,7 +45,7 @@ jobs:
         run: printf '%s (%s)\n' "$CLASSIFICATION" "$REASON"
 ```
 
-`main` is a mutable bootstrap reference. For production, review the source and resolved commit, then replace `@main` with that complete 40-character commit SHA. GitHub identifies a full commit SHA as the only immutable way to consume an action.
+When upgrading, review the source and resolved commit, then replace the SHA deliberately. GitHub identifies a full commit SHA as the only immutable way to consume an action.
 
 ## Input
 
